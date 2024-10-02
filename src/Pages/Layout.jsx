@@ -2,7 +2,7 @@ import React from "react";
 import { Menu, Preloader, Footer, Container } from "../Components/Menu.jsx";
 import Header from "../Components/Header.jsx";
 import Title from "../Components/Title.jsx";
-import { JWT_TOKEN } from "../utils/Globals.js";
+import { JWT_TOKEN } from "../config/Globals.js";
 import { useLocation } from "react-router-dom";
 
 const MainLayout = ({ ...props }) => {

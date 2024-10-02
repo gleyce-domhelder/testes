@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
 import { Navigate, useRoutes } from 'react-router-dom';
-import Login from '../Pages/Login';
-import Listar_Usuario from '../Pages/Usuário/Listar';
-import Listar_Cliente from '../Pages/Cliente/Listar';
-import { Styles, Scripts } from '../Services/Style';
+import Login from '../Pages/Login.jsx';
+import Listar_Usuario from '../Pages/Usuário/Listar.jsx';
+import Listar_Cliente from '../Pages/Cliente/Listar.jsx';
+import { Styles, Scripts } from '../utils/Style.js';
 import Layout from '../Pages/Layout.jsx';
 import Alterar_senha from '../Pages/Alterar_senha.jsx';
 import Pagina_erro from '../Pages/Erro/Pagina_nao_encontrada.jsx';
-import Home from '../Components/Comum/Dashboard';
+import Home from '../Components/Comum/Dashboard.jsx';
 
 const addCssLink = (href) => {
     const link = document.createElement('link');
@@ -35,7 +35,7 @@ export const routes = [
     {
         path: "/home",
         element: <Layout children={<Home />} title={'Home'} />,
-        type: "public",
+        type: "logged",
         css: [],
         script: []
     },
@@ -108,12 +108,12 @@ export const routes = [
     {
         path: "/cliente-inativar",
         type: "protected",
-        key: 20
+        key: 2
     },
     {
         path: "/cliente-ativar",
         type: "protected",
-        key: 20
+        key: 2
     },
 ]
 

@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { getCookie } from '../Services/Cookies';
+import { getCookie } from '../utils/Cookies';
 const Menu = ({ props = [] }) => {
   const renderedMenuItems = useMemo(() => {
     const addedMenus = new Set();

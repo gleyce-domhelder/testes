@@ -2,15 +2,15 @@ import React, { useState } from 'react';
 import Voltar_login from '../Components/Buttons/Login/Voltar_login';
 import { mostrarAlertaErro, mostrarAlertaSucesso } from '../lib/swal';
 import { api } from '../lib/Axios';
-import { Navigate } from 'react-router-dom';
-const Alterar_senha = ({rota}) => {
+import { Navigate, useNavigate } from 'react-router-dom';
+const Alterar_senha = ({ rota }) => {
   const [password_new, setPasswordNew] = useState('');
   const [password_confirm, setPasswordConfirm] = useState('');
   const [code, setCode] = useState('');
   const [errorNewPassword, setErrorNewPassword] = useState('');
   const [errorConfirmPassword, setErrorConfirmPassword] = useState('');
   const [errorCode, setErrorCode] = useState('');
-
+  const navigate = useNavigate();
 
   const handleNewPassword = (e) => {
     const newPassword = e.target.value;
@@ -70,7 +70,7 @@ const Alterar_senha = ({rota}) => {
             'Você pode agora voltar para o login.',
             () => {
               localStorage.removeItem('email');
-              <Navigate to={rota} />
+              navigate(rota, { replace: true });
             }
           );
         }
@@ -144,7 +144,7 @@ const Alterar_senha = ({rota}) => {
                         </div>
                         {errorConfirmPassword && <div className="mb-3 text-danger">{errorConfirmPassword}</div>}
                         <div className="form-row d-flex justify-content-between mt-4 mb-2">
-                          <Voltar_login />
+                          <Voltar_login rota={rota} />
                         </div>
                         <div className="text-center mb-4">
                           <button type="submit" className="btn btn-primary btn-block">Enviar</button>

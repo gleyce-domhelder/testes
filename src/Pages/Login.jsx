@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import Esqueceu_senha from '../Components/Buttons/Login/Esqueceu_senha';
-import { setCookie, getCookie } from "../Services/Cookies";
-import { loginApi } from '../Services/Login';
-import { Navigate } from 'react-router-dom';
+import { setCookie, getCookie } from "../utils/Cookies";
+import { loginApi } from '../utils/Login';
+import { useNavigate } from 'react-router-dom';
 
 export default function Login({rota}) {
   const [alert, setAlert] = useState(null);
+  const navigate = useNavigate();
   useEffect(() => {
     const emailFromCookie = getCookie('email');
     if (emailFromCookie) {
@@ -28,7 +29,7 @@ export default function Login({rota}) {
       if (isLoggedIn) {
           setAlert(showSuccessAlert());
           setTimeout(() => {
-           return <Navigate to={rota}/>
+           return navigate(rota, { replace: true });
           }, 1000);
         } else {
           setAlert(showErrorAlert());
@@ -105,7 +106,7 @@ export default function Login({rota}) {
                             </div>
                           </div>
                           <div className="mb-4">
-                            <Esqueceu_senha />
+                            <Esqueceu_senha rota={"/nova-senha"}/>
                           </div>
                         </div>
                         <div className="text-center mb-4">

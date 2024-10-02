@@ -1,5 +1,5 @@
 import { api } from '../lib/Axios';
-import { JWT_TOKEN } from '../utils/Globals';
+import { JWT_TOKEN } from '../config/Globals';
 const storage = localStorage;
 const loginApi = (email, senha) => {
     return api().post('auth/login', {

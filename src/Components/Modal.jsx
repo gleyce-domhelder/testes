@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Multiselect from 'multiselect-react-dropdown';
 import { Modal, Form, Row, Col, Button } from 'react-bootstrap';
 import { api } from '../lib/Axios';
-import { API_URL, TOKEN } from '../utils/Globals';
+import { API_URL, TOKEN } from '../config/Globals';
 import axios from 'axios';
 const DynamicModal = ({ show, onHide, fields, post, get, onSubmit, title }) => {
   const [formValues, setFormValues] = useState({});

@@ -1,6 +1,6 @@
-import HandleLogout from '../Services/Logout';
+import HandleLogout from '../utils/Logout';
 import { useState, useEffect } from "react";
-import { getCookie, setCookie } from "../Services/Cookies";
+import { getCookie, setCookie } from "../utils/Cookies";
 export default function Header({ props }) {
   const logout = () => {
     HandleLogout();

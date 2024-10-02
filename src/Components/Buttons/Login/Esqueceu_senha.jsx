@@ -2,15 +2,18 @@ import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { api } from '../../../lib/Axios';
-export default function Esqueceu_senha() {
+import { useNavigate } from 'react-router-dom';
+export default function Esqueceu_senha({rota}) {
   const [email, setEmail] = useState('');
   const [showForgotPasswordModal, setShowForgotPasswordModal] = useState(false);
   const [showEmailSentModal, setShowEmailSentModal] = useState(false);
+  const navigate = useNavigate();
 
+  
   const handleCloseForgotPasswordModal = () => setShowForgotPasswordModal(false);
   const handleShowForgotPasswordModal = () => setShowForgotPasswordModal(true);
 
-  const handleCloseEmailSentModal = () => window.location.pathname='/painel/nova-senha';
+  const handleCloseEmailSentModal = () => navigate(rota, { replace: true });
   const handleShowEmailSentModal = () => setShowEmailSentModal(true);
 
   const handleSendEmail = () => {

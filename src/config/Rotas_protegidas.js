@@ -2,7 +2,7 @@ import React from 'react';
 import { useRoutes, Navigate, useLocation  } from 'react-router-dom';
 import { routes } from './Rotas.js';
 import { MODULOS } from './Globals.js';
-import { getWithExpiration } from '../Services/Login.js';
+import { getWithExpiration } from '../utils/Login.js';
 
 const isLogged = getWithExpiration();
 

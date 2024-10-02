@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
-import { Permission } from '../../utils/Rotas_protegidas';
+import { Permission } from '../../config/Rotas_protegidas';
 import { mostrarAlertaConfirmacao } from '../../lib/swal';
 import { api } from '../../lib/Axios';
 export default function Buttons({ dado, type, rota, title, onClick }) {

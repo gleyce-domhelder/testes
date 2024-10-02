@@ -1,7 +1,8 @@
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function Pagina_nao_encontrada({ rota }) {
-    const telaInicial = () => {return <Navigate to={rota}/>};
+  const navigate = useNavigate();
+    const telaInicial = () =>  navigate(rota, { replace: true });
     return (
         <body class="vh-100" data-typography="poppins" data-theme-version="light" data-layout="vertical" data-nav-headerbg="color_4" data-headerbg="color_4" data-sidebar-style="overlay" data-sidebarbg="color_1" data-sidebar-position="fixed" data-header-position="fixed" data-container="wide" data-primary="color_1" data-secondary="color_1">
             <div class="authincation h-100">
