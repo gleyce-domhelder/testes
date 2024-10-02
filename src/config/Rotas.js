@@ -35,7 +35,7 @@ export const routes = [
     {
         path: "/home",
         element: <Layout children={<Home />} title={'Home'} />,
-        type: "logged",
+        type: "public",
         css: [],
         script: []
     },
@@ -54,7 +54,7 @@ export const routes = [
     {
         path: "/usuario",
         element: <Layout children={<Listar_Usuario />} title={'Usuários'} />,
-        type: "protected",
+        type: "public",
         key: 1,
         css: [],
     },
