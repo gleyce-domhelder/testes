@@ -11,7 +11,7 @@ export default function Pagina_nao_encontrada({ rota }) {
                         <div class="col-md-6">
                             <div class="error-page">
                                 <div class="error-inner text-center">
-                                    <div class="dz-error" data-text="400">404</div>
+                                    <div class="dz-error" data-text="400">400</div>
                                     <h2 class="error-head">Lamentamos, mas a página que você está procurando não pode ser encontrada.</h2>
                                     <button className="btn btn-secondary" onClick={telaInicial}>
                                         VOLTAR PARA PÁGINA INICIAL
