@@ -1,10 +1,9 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 export default function Voltar_login({ rota }) {
-    const navigate = useNavigate();
 
     const handleSkipLogin = () => {
-        navigate(rota, { replace: true });
+        window.location.pathname=rota;
     };
 
 
